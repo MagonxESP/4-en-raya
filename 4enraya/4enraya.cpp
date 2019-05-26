@@ -55,7 +55,7 @@ string crear_fila(int fila, int columnas, bool final, vector<char> pieza) {
 	return fila_string;
 }
 
-vector<string> crear_tablero(int filas, int columnas, vector<vector<char>> piezas) {
+vector<string> crear_tablero(int filas, int columnas, vector< vector<char> > piezas) {
 	vector<string> tablero;
 
 	for (int i = 0; i < filas; i++) {
@@ -120,7 +120,7 @@ int genera_aleatorio(vector<char> fila) {
 	return num;
 }
 
-vector<vector<char>> tirada_jugador(vector<vector<char>> piezas, int filaActual) {
+vector< vector<char> > tirada_jugador(vector< vector<char> > piezas, int filaActual) {
 	int columna;
 	bool is_columna_correcta;
 
@@ -143,7 +143,7 @@ vector<vector<char>> tirada_jugador(vector<vector<char>> piezas, int filaActual)
 	return piezas;
 }
 
-vector<vector<char>> tirada_maquina(vector<vector<char>> piezas, int filaActual) {
+vector< vector<char> > tirada_maquina(vector< vector<char> > piezas, int filaActual) {
 	int columna;
 	bool is_columna_correcta;
 
@@ -180,7 +180,7 @@ bool fila_llena(vector<char> piezas) {
 	return false;
 }
 
-bool tablero_lleno(vector<vector<char>> piezas) {
+bool tablero_lleno(vector< vector<char> > piezas) {
 	int notNulls = 0;
 
 	for (int fila = 0; fila < piezas.size(); fila++) {
@@ -204,7 +204,7 @@ void limpiar_pantalla() {
 #endif
 }
 
-bool isDiagonal(vector<vector<char>> tablero, char jugador, int columna, int fila) {
+bool isDiagonal(vector< vector<char> > tablero, char jugador, int columna, int fila) {
 	int fichas = 0;
 	int direccion = 0;
 	int _columna = columna;
@@ -256,7 +256,7 @@ bool isDiagonal(vector<vector<char>> tablero, char jugador, int columna, int fil
 	return false;
 }
 
-bool isColumna(vector<vector<char>> tablero, char jugador, int columna, int fila) {
+bool isColumna(vector< vector<char> > tablero, char jugador, int columna, int fila) {
 	int fichas = 0;
 	char ficha_anterior = '\0';
 
@@ -279,7 +279,7 @@ bool isColumna(vector<vector<char>> tablero, char jugador, int columna, int fila
 	return false;
 }
 
-bool isFila(vector<vector<char>> tablero, char jugador, int fila) {
+bool isFila(vector< vector<char> > tablero, char jugador, int fila) {
 	int fichas = 0;
 	char ficha_anterior = '\0';
 
@@ -302,7 +302,7 @@ bool isFila(vector<vector<char>> tablero, char jugador, int fila) {
 	return false;
 }
 
-int puntuacion(vector<vector<char>> tablero, char jugador) {
+int puntuacion(vector< vector<char> > tablero, char jugador) {
 	int puntos = 0;
 
 	for (int fila = (FILAS - 1); fila > 0; fila--) {
@@ -325,7 +325,7 @@ int puntuacion(vector<vector<char>> tablero, char jugador) {
 
 int jugar() {
 	vector<string> tablero;
-	vector<vector<char>> piezas;
+	vector< vector<char> > piezas;
 	piezas.resize(FILAS, vector<char>(COLUMNAS, '\0'));
 	int filaActual = FILAS - 1;
 
